@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 
   validate :title_must_be_clickbait
 
-  def :title_must_be_clickbait
+  def title_must_be_clickbait
     if title.include?("Won't Believe") || title.include?("Secret") || title.include?("Top [number]") || title.include?("Guess")
     end
   end
