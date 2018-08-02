@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   def title_must_be_clickbait
   binding.pry
-    if !title.include?("Won't Believe") || !title.include?("Secret") || !title.include?("Top [number]") || !title.include?("Guess")
+    if !title.include?("Won't Believe"|| "Secret"|| "Top [number]" || "Guess")
       errors.add(:title, "must be click bait-y!")
     end
   end
