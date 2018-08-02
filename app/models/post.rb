@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
   def :title_must_be_clickbait
     if title.include?("Won't Believe") || title.include?("Secret") || title.include?("Top [number]") || title.include?("Guess")
+    end
   end
 
 
