@@ -3,7 +3,8 @@ class Post < ActiveRecord::Base
   validate :title_must_be_clickbait
 
   def title_must_be_clickbait
-    if title.include?("Won't Believe") || title.include?("Secret") || title.include?("Top [number]") || title.include?("Guess")
+    if !title.include?("Won't Believe") || !title.include?("Secret") || !title.include?("Top [number]") || !title.include?("Guess")
+      errors.add(:title, "must be click bait-y!")
     end
   end
 
@@ -12,5 +13,5 @@ class Post < ActiveRecord::Base
   validates :content, length: { minimum: 250 }
   validates :summary, length: { maximum: 250 }
   validates :category, inclusion: { in: %w(Fiction Nonfiction)}
-  
+
 end
